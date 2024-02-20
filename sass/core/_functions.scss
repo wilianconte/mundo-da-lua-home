@@ -1,0 +1,9 @@
+//converte valores de PX para EM
+@function pxToEm($sizeValue) {
+  @return #{$sizeValue / 16px}em;
+}
+
+//converte valores de EM para PX
+@function pxToEm($sizeValue) {
+  @return #{$sizeValue * 16px}px;
+}

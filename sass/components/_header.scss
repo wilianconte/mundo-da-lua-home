@@ -1,0 +1,77 @@
+.header
+{
+    display: flex;
+    background: url('../img/patter-35.png'), #00296F;
+    background-size: 70px;
+
+    @include  for-desktop-up() {
+        background: url('../img/patter-35.png'), red;
+        background-size: 70px;
+    }
+
+    @include  for-tablet-landscape-up() {
+        background: url('../img/patter-35.png'), orange;
+        background-size: 70px;
+    }
+
+    @include  for-tablet-portrait-up() 
+    {
+        background: url('../img/patter-35.png'), green;
+        background-size: 70px;
+    }
+
+   @include  for-phone-only()
+    {
+        background: url('../img/patter-35.png'), pink;
+        background-size: 70px;
+    }
+
+
+    .header-content {
+        
+        display: flex;
+        flex-grow: 1;
+        
+        padding: 25px 64px;
+
+        .logo {
+            flex-grow: 1;
+        }
+        .menu {
+            
+            display: flex;
+    
+            ul
+            {
+                display: flex;
+                align-items: center;
+    
+                li {
+                    list-style-type: none;                            
+                    border-left: 1px solid white;
+                    padding: 0px 15px 0px 15px; 
+
+                    a {
+                        color: white;
+                    
+                        &.current {
+                            font-weight: 700;
+                        }
+
+                        &:hover {
+                            color: #F9B025;
+                        }
+                    }
+                }
+
+                li:first-child { 
+                    border-left: 1px solid white;
+                  }
+                li:last-child {
+                    border-right: 1px solid white;
+                    margin-right: 15px;
+                  }
+            }
+        }
+    }
+}

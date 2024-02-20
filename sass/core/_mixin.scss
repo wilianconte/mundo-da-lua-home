@@ -1,0 +1,47 @@
+@mixin box-sizing($box-model : border-box) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+@mixin bg-cores($lado, $cores...)
+{
+    @if ($lado == left)
+    {
+      background: linear-gradient(to left, $cores)
+    }
+    @else 
+    {
+        background: linear-gradient(to right, $cores)
+    }
+}
+
+@mixin set-icon($principal, $hover)
+{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover; 
+    
+    background-image: url($principal);
+        &:hover,
+        &:focus {
+          background-image: url($hover);
+        }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 600px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (max-width: 768px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (max-width: 992px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (max-width: 1200px) { @content; }
+}
+// @mixin for-big-desktop-up {
+//   @media (min-width: 1800px) { @content; }
+// }

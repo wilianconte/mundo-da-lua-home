@@ -1,0 +1,122 @@
+html
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+body
+{
+    //box-sizing: border-box;
+    height: 100vh;
+    background-color: #C4C4C4;    
+}
+
+a {
+    text-decoration: none;
+}
+
+
+//-------------------------------------------
+
+.fc-white {color: $white}
+
+//-------------------------------------------
+
+.fs-14 { font-size: 14px; line-height: 18.62px; }
+.fs-16 { font-size: 16px; line-height: 24px; }
+.fs-18 { font-size: 18px }
+.fs-20 { font-size: 20px; line-height: 30px; }
+.fs-24 { font-size: 24px; line-height: 36px; }
+.fs-32 { font-size: 32px; }
+.fs-64 { font-size: 64px; line-height:67.2px; }
+
+//-------------------------------------------
+
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+
+//-------------------------------------------
+
+.bg-red { background-color: red; }
+.bg-blue { background-color: blue; }
+.bg-green { background-color: green; }
+
+//-------------------------------------------
+
+.wrapper {
+    
+    max-width: 1980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//-------------------------------------------
+
+.icon {
+    
+    &-whatsapp {
+        @include set-icon('../../img/icon-whatsapp-white.svg', '../../img/icon-whatsapp-yellow.svg')
+      }
+
+      &-instagran {
+        @include set-icon('../../img/icon-instagran-white.svg', '../../img/icon-instagran-yellow.svg')
+      }
+
+      &-facebook {
+        @include set-icon('../../img/icon-facebook-white.svg', '../../img/icon-facebook-yellow.svg')
+      }
+  }
+
+//-------------------------------------------  
+
+.btn-primary {
+    text-align: center;
+    border-radius: 500px;
+    padding: 7px 24px;
+    margin-left: 15px;
+    color: #402D09;
+    background-color:#F9B025;
+
+    &:hover
+    {
+        color: #402D09;
+        background-color:#F9E8C7;
+    }
+}
+
+.btn { 
+
+    &.btn-secondary {
+
+        display: inline-block;
+        width: 250px;
+        font-weight: 500;
+        padding: 18px;
+        text-align: center;
+        border-radius: 16px;
+        color: #402D09;
+        background-color:#F9B025;
+    
+        &:hover
+        {
+            color: #BA7C11;
+            background-color:#F9E8C7;
+        }
+    }
+
+    &.green {
+
+        color: #003318;
+        background-color:#00FF75;
+    
+        &:hover
+        {
+            color: #006630;
+            background-color:#CCFFE4;
+        }
+    }
+}
+//-------------------------------------------
+

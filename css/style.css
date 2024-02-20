@@ -1,0 +1,352 @@
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  background-color: #C4C4C4;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fc-white {
+  color: #ffffff;
+}
+
+.fs-14 {
+  font-size: 14px;
+  line-height: 18.62px;
+}
+
+.fs-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.fs-24 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-64 {
+  font-size: 64px;
+  line-height: 67.2px;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.wrapper {
+  max-width: 1980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-whatsapp {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-image: url("../../img/icon-whatsapp-white.svg");
+}
+.icon-whatsapp:hover, .icon-whatsapp:focus {
+  background-image: url("../../img/icon-whatsapp-yellow.svg");
+}
+.icon-instagran {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-image: url("../../img/icon-instagran-white.svg");
+}
+.icon-instagran:hover, .icon-instagran:focus {
+  background-image: url("../../img/icon-instagran-yellow.svg");
+}
+.icon-facebook {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-image: url("../../img/icon-facebook-white.svg");
+}
+.icon-facebook:hover, .icon-facebook:focus {
+  background-image: url("../../img/icon-facebook-yellow.svg");
+}
+
+.btn-primary {
+  text-align: center;
+  border-radius: 500px;
+  padding: 7px 24px;
+  margin-left: 15px;
+  color: #402D09;
+  background-color: #F9B025;
+}
+.btn-primary:hover {
+  color: #402D09;
+  background-color: #F9E8C7;
+}
+
+.btn.btn-secondary {
+  display: inline-block;
+  width: 250px;
+  font-weight: 500;
+  padding: 18px;
+  text-align: center;
+  border-radius: 16px;
+  color: #402D09;
+  background-color: #F9B025;
+}
+.btn.btn-secondary:hover {
+  color: #BA7C11;
+  background-color: #F9E8C7;
+}
+.btn.green {
+  color: #003318;
+  background-color: #00FF75;
+}
+.btn.green:hover {
+  color: #006630;
+  background-color: #CCFFE4;
+}
+
+.header {
+  display: flex;
+  background: url("../img/patter-35.png"), #00296F;
+  background-size: 70px;
+}
+@media (max-width: 1200px) {
+  .header {
+    background: url("../img/patter-35.png"), red;
+    background-size: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .header {
+    background: url("../img/patter-35.png"), orange;
+    background-size: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    background: url("../img/patter-35.png"), green;
+    background-size: 70px;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    background: url("../img/patter-35.png"), pink;
+    background-size: 70px;
+  }
+}
+.header .header-content {
+  display: flex;
+  flex-grow: 1;
+  padding: 25px 64px;
+}
+.header .header-content .logo {
+  flex-grow: 1;
+}
+.header .header-content .menu {
+  display: flex;
+}
+.header .header-content .menu ul {
+  display: flex;
+  align-items: center;
+}
+.header .header-content .menu ul li {
+  list-style-type: none;
+  border-left: 1px solid white;
+  padding: 0px 15px 0px 15px;
+}
+.header .header-content .menu ul li a {
+  color: white;
+}
+.header .header-content .menu ul li a.current {
+  font-weight: 700;
+}
+.header .header-content .menu ul li a:hover {
+  color: #F9B025;
+}
+.header .header-content .menu ul li:first-child {
+  border-left: 1px solid white;
+}
+.header .header-content .menu ul li:last-child {
+  border-right: 1px solid white;
+  margin-right: 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background: url("../img/patter-35.png"), #00296F;
+  background-size: 70px;
+  min-height: 100px;
+}
+.footer .footer-wrapper {
+  display: flex;
+  gap: 232px;
+  padding: 40px;
+}
+.footer .footer-wrapper .second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border-left: solid 1px white;
+  padding-left: 24px;
+}
+.footer .footer-wrapper .second input {
+  color: #666;
+  font-size: 20px;
+  font-style: italic;
+  padding: 8px 36px 8px 18px;
+  width: 368px;
+  height: 48px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+.footer .footer-wrapper .second a {
+  color: #402D09;
+  background-color: #F9B025;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 24px 24px 24px 24px;
+  border-radius: 8px;
+  margin-left: -16px;
+  position: absolute;
+}
+.footer .footer-wrapper .second a:hover {
+  color: #BA7C11;
+  background-color: #F9E8C7;
+}
+.footer .footer-wrapper .third {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 36px;
+}
+.footer .footer-wrapper .third div {
+  width: 95px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.main .first {
+  display: flex;
+  justify-content: center;
+}
+.main .first .first-wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 40px 0px;
+  margin: 50px;
+}
+.main .first .first-wrapper div.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  min-width: 50%;
+  max-width: 624px;
+}
+.main .first .first-wrapper div.right {
+  min-width: 50%;
+  max-width: 600px;
+  background-size: cover;
+}
+.main .first .first-wrapper div.right img {
+  width: 100%;
+  height: auto;
+}
+.main .second {
+  display: flex;
+  justify-content: center;
+  background: url("../img/patter-35.png"), #00296F;
+  background-size: 70px;
+}
+.main .second .second-wrapper {
+  display: flex;
+  width: 890px;
+  padding: 50px;
+}
+.main .second .second-wrapper div.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.main .second .second-wrapper div.left a {
+  color: #F9B025;
+}
+.main .second .second-wrapper div.left a:hover {
+  color: #EA525F;
+  text-decoration: underline;
+}
+.main .third {
+  display: flex;
+  justify-content: center;
+}
+.main .third .first-wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 40px 0px;
+  margin: 50px;
+}
+.main .third .first-wrapper div.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 646px;
+}
+.main .third .first-wrapper div.right {
+  width: 450px;
+  height: 450px;
+  background-image: url("../img/section-3.jpg");
+  background-size: cover;
+  background-position: 73% 75%;
+}
+
+/*# sourceMappingURL=style.css.map */

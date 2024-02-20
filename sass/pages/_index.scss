@@ -1,0 +1,124 @@
+.main
+{
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    
+    .first
+    {   
+        display: flex;
+        justify-content: center;
+        
+        .first-wrapper
+        {
+            display: flex;
+            gap: 24px;
+            padding: 40px 0px;
+            margin: 50px;
+            
+            div{
+            
+                &.left {
+    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 30px;
+                    min-width:50%;
+                    max-width: 624px;
+                }
+    
+                &.right {
+                    
+                    min-width:50%;
+                    max-width: 600px;
+                    background-size: cover;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                      }
+                }
+            }            
+        }
+    }
+
+    .second
+    {
+        display: flex;
+        justify-content: center;
+
+        background: url('../img/patter-35.png'), #00296F;
+        background-size: 70px;
+
+
+        .second-wrapper
+        {
+            display: flex;
+
+            width: 890px;
+            padding: 50px;            
+            
+            div{
+    
+                &.left {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 16px;
+
+                    a {
+                        color:#F9B025;
+
+                        &:hover
+                        {
+                            color: #EA525F;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+    
+                // &.right {
+                    
+                // }
+            }   
+        }
+    }
+
+    .third
+    {
+        display: flex;
+        justify-content: center;
+        
+        .first-wrapper
+        {
+            display: flex;
+            gap: 24px;
+            padding: 40px 0px;
+            margin: 50px;
+            
+            div{
+            
+                &.left {
+    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 30px;
+
+                    width: 646px;
+                }
+    
+                &.right {
+                    
+                    width: 450px;
+                    height: 450px;
+                    background-image: url('../img/section-3.jpg');
+                    background-size: cover;
+                    background-position: 73% 75%;
+                }
+            }            
+        }
+    }
+}
