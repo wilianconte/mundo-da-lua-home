@@ -1,12 +1,10 @@
-html
-{
+html {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
 }
 
-body
-{
+body {
     //box-sizing: border-box;
     height: 100vh;
     background-color: #C4C4C4;    
@@ -16,20 +14,20 @@ a {
     text-decoration: none;
 }
 
+//-------------------------------------------
+
+.fc-white {
+    color: $white
+}
 
 //-------------------------------------------
 
-.fc-white {color: $white}
-
-//-------------------------------------------
-
-.fs-14 { font-size: 14px; line-height: 18.62px; }
-.fs-16 { font-size: 16px; line-height: 24px; }
-.fs-18 { font-size: 18px }
-.fs-20 { font-size: 20px; line-height: 30px; }
-.fs-24 { font-size: 24px; line-height: 36px; }
-.fs-32 { font-size: 32px; }
-.fs-64 { font-size: 64px; line-height:67.2px; }
+// Font Size
+.fs-sm { font-size: 14px; line-height: 21px; }  /* Small font size */
+.fs-md { font-size: 16px; line-height: 24px; }  /* Medium font size */
+.fs-lg { font-size: 18px; line-height: 27px; }  /* Large font size */
+.fs-xl { font-size: 20px; line-height: 30px; }  /* Extra large font size */
+.fs-xxl { font-size: 24px; line-height: 36px; } /* 2X Extra large font size */
 
 //-------------------------------------------
 
@@ -118,5 +116,37 @@ a {
         }
     }
 }
+
 //-------------------------------------------
 
+@include for-tablet-portrait-up() {
+    .fs-sm { font-size: 15px; line-height: 22.5px; }
+    .fs-md { font-size: 17px; line-height: 25.5px; }
+    .fs-lg { font-size: 19px; line-height: 28.5px; }
+    .fs-xl { font-size: 21px; line-height: 31.5px; }
+    .fs-xxl { font-size: 26px; line-height: 39px; }
+}
+
+@include for-tablet-landscape-up() {
+    .fs-sm { font-size: 16px; line-height: 24px; }
+    .fs-md { font-size: 18px; line-height: 27px; }
+    .fs-lg { font-size: 20px; line-height: 30px; }
+    .fs-xl { font-size: 22px; line-height: 33px; }
+    .fs-xxl { font-size: 28px; line-height: 42px; }
+}
+
+@include for-desktop-up() {
+    .fs-sm { font-size: 18px; line-height: 27px; }
+    .fs-md { font-size: 20px; line-height: 30px; }
+    .fs-lg { font-size: 22px; line-height: 33px; }
+    .fs-xl { font-size: 24px; line-height: 36px; }
+    .fs-xxl { font-size: 30px; line-height: 45px; }
+}
+
+@include for-big-desktop-up() {
+    .fs-sm { font-size: 20px; line-height: 30px; }
+    .fs-md { font-size: 22px; line-height: 33px; }
+    .fs-lg { font-size: 24px; line-height: 36px; }
+    .fs-xl { font-size: 26px; line-height: 39px; }
+    .fs-xxl { font-size: 32px; line-height: 48px; }
+}

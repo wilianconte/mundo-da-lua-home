@@ -30,18 +30,37 @@
         }
 }
 
+// Mixin para telas de até 600px de largura (dispositivos móveis)
 @mixin for-phone-only {
-  @media (max-width: 600px) { @content; }
+  @media (max-width: 600px) { 
+    @content; 
+  }
 }
+
+// Mixin para telas entre 601px e 768px de largura (tablets em modo retrato)
 @mixin for-tablet-portrait-up {
-  @media (max-width: 768px) { @content; }
+  @media (min-width: 601px) { 
+    @content; 
+  }
 }
+
+// Mixin para telas entre 769px e 992px de largura (tablets em modo paisagem)
 @mixin for-tablet-landscape-up {
-  @media (max-width: 992px) { @content; }
+  @media (min-width: 769px) { 
+    @content; 
+  }
 }
+
+// Mixin para telas entre 993px e 1799px de largura (desktops)
 @mixin for-desktop-up {
-  @media (max-width: 1200px) { @content; }
+  @media (min-width: 993px) { 
+    @content; 
+  }
 }
-// @mixin for-big-desktop-up {
-//   @media (min-width: 1800px) { @content; }
-// }
+
+// Mixin para telas com 1800px ou mais de largura (desktops grandes)
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { 
+    @content; 
+  }
+}
