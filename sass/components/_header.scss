@@ -53,7 +53,7 @@
 
         @include  for-tablet-portrait-up() 
         {
-            background: url('../img/patter-35.png'), green;
+            //background: url('../img/patter-35.png'), green;
             background-size: 70px;
 
             .menu {
@@ -66,12 +66,12 @@
         }
 
         @include  for-tablet-landscape-up() {
-            background: url('../img/patter-35.png'), orange;
+            //background: url('../img/patter-35.png'), orange;
             background-size: 70px;
         }
 
         @include  for-desktop-up() {
-            background: url('../img/patter-35.png'), red;
+            //background: url('../img/patter-35.png'), red;
             background-size: 70px;
         }
     }

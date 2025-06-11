@@ -1,75 +1,88 @@
 .footer
 {
-    
     display: flex;
     justify-content: center;
-
     background: url('../img/patter-35.png'), #00296F;
     background-size: 70px;
-
     min-height: 100px;
 
-    .footer-wrapper
-    {
+    .footer-wrapper {
         display: flex;
         gap: 232px;
-
         padding: 40px;
 
         .second {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 16px;
+            display: none;
+        }
 
-            border-left: solid 1px white;
-            padding-left:24px;
+        .third {
+            display: none;
+        }
+    }
 
-            input{
+    @include  for-tablet-portrait-up() {
+        .footer-wrapper
+        {
+            .second {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 16px;
 
-                color: #666;
-                font-size: 20px;
-                font-style: italic;
-                padding: 8px 36px 8px 18px;
+                border-left: solid 1px white;
+                padding-left:24px;
 
-                width: 368px;
-                height:48px;
-                border-radius: 8px;
-                outline: none;
-                border:none;
+                input{
+
+                    color: #666;
+                    font-size: 20px;
+                    font-style: italic;
+                    padding: 8px 36px 8px 18px;
+
+                    width: 368px;
+                    height:48px;
+                    border-radius: 8px;
+                    outline: none;
+                    border:none;
+                }
+
+                
+
+                a {
+                    color: #402D09;
+                    background-color: #F9B025;
+                    font-weight: 600;
+                    font-size: 16px;
+                    padding: 24px 24px 24px 24px;
+                    border-radius: 8px;
+                    margin-left: -16px;
+                    position: absolute;
+
+                    &:hover
+                    {
+                        color: #BA7C11;
+                        background-color: #F9E8C7;
+                    }
+                }
             }
 
-            
+            .third {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding-top: 36px;
 
-            a {
-                color: #402D09;
-                background-color: #F9B025;
-                font-weight: 600;
-                font-size: 16px;
-                padding: 24px 24px 24px 24px;
-                border-radius: 8px;
-                margin-left: -16px;
-                position: absolute;
-
-                &:hover
+                div
                 {
-                    color: #BA7C11;
-                    background-color: #F9E8C7;
+                    width: 150px;
                 }
             }
         }
+    }
 
-        .third
-        {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding-top: 36px;
+    @include  for-tablet-landscape-up() {
+    }
 
-            div
-            {
-                width: 95px;
-            }
-        }
+    @include  for-desktop-up() {
     }
 }
