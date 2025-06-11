@@ -104,30 +104,30 @@ a {
   width: 40px;
   height: 40px;
   background-size: cover;
-  background-image: url("../../img/icon-whatsapp-white.svg");
+  background-image: url("/img/icon-whatsapp-white.svg");
 }
 .icon-whatsapp:hover, .icon-whatsapp:focus {
-  background-image: url("../../img/icon-whatsapp-yellow.svg");
+  background-image: url("/img/icon-whatsapp-yellow.svg");
 }
 .icon-instagran {
   display: inline-block;
   width: 40px;
   height: 40px;
   background-size: cover;
-  background-image: url("../../img/icon-instagran-white.svg");
+  background-image: url("/img/icon-instagran-white.svg");
 }
 .icon-instagran:hover, .icon-instagran:focus {
-  background-image: url("../../img/icon-instagran-yellow.svg");
+  background-image: url("/img/icon-instagran-yellow.svg");
 }
 .icon-facebook {
   display: inline-block;
   width: 40px;
   height: 40px;
   background-size: cover;
-  background-image: url("../../img/icon-facebook-white.svg");
+  background-image: url("/img/icon-facebook-white.svg");
 }
 .icon-facebook:hover, .icon-facebook:focus {
-  background-image: url("../../img/icon-facebook-yellow.svg");
+  background-image: url("/img/icon-facebook-yellow.svg");
 }
 
 .btn-primary {
@@ -268,7 +268,7 @@ a {
 }
 .header {
   display: flex;
-  background: url("../img/patter-35.png"), #00296F;
+  background: url("/img/patter-35.png"), #00296F;
   background-size: 70px;
 }
 .header .header-content {
@@ -329,7 +329,7 @@ a {
 .footer {
   display: flex;
   justify-content: center;
-  background: url("../img/patter-35.png"), #00296F;
+  background: url("/img/patter-35.png"), #00296F;
   background-size: 70px;
   min-height: 100px;
 }
@@ -433,7 +433,7 @@ a {
 .main .second {
   display: flex;
   justify-content: center;
-  background: url("../img/patter-35.png"), #00296F;
+  background: url("/img/patter-35.png"), #00296F;
   background-size: 70px;
 }
 .main .second .second-wrapper {
