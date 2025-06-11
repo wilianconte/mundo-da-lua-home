@@ -63,15 +63,15 @@ a {
 .icon {
     
     &-whatsapp {
-        @include set-icon('../../img/icon-whatsapp-white.svg', '../../img/icon-whatsapp-yellow.svg')
+        @include set-icon('/img/icon-whatsapp-white.svg', '/img/icon-whatsapp-yellow.svg')
       }
 
       &-instagran {
-        @include set-icon('../../img/icon-instagran-white.svg', '../../img/icon-instagran-yellow.svg')
+        @include set-icon('/img/icon-instagran-white.svg', '/img/icon-instagran-yellow.svg')
       }
 
       &-facebook {
-        @include set-icon('../../img/icon-facebook-white.svg', '../../img/icon-facebook-yellow.svg')
+        @include set-icon('/img/icon-facebook-white.svg', '/img/icon-facebook-yellow.svg')
       }
   }
 
