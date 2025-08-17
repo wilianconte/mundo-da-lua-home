@@ -72,8 +72,8 @@ jobs:
           ssh -i ~/.ssh/gha_deploy -o StrictHostKeyChecking=yes -p "$PORT" "$USER@$HOST" \
             "set -euo pipefail; \
              if command -v microk8s >/dev/null 2>&1; then CMD='microk8s kubectl'; else CMD='kubectl'; fi; \
-             NS='mundo-da-lua';DEPLOY='mundo-da-lua-home'; CONTAINER='mundo-da-lua-home'; \
-             \$CMD set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:${SHA_TAG} --record; \
-             \$CMD rollout status deployment/\$DEPLOY --timeout=120s; \
-             \$CMD get pods -l app=\$CONTAINER -o wide --no-headers | head -n 5 \
+             NS='mundo-da-lua'; DEPLOY='mundo-da-lua-home'; CONTAINER='mundo-da-lua-home'; \
+             \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:${SHA_TAG} --record; \
+             \$CMD -n \$NS rollout status deployment/\$DEPLOY --timeout=120s; \
+             \$CMD -n \$NS get pods -l app=\$CONTAINER -o wide --no-headers | head -n 5 \
             "
