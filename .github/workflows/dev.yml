@@ -71,17 +71,13 @@ jobs:
         run: |
           ssh -i ~/.ssh/gha_deploy -o StrictHostKeyChecking=yes -p "$PORT" "$USER@$HOST" \
             "set -euo pipefail; \
-             # Detecta microk8s ou kubectl e usa sudo -n se necessário
              if command -v microk8s >/dev/null 2>&1; then
                if sudo -n true 2>/dev/null; then CMD='sudo -n microk8s kubectl'; else CMD='microk8s kubectl'; fi
              else
                if sudo -n true 2>/dev/null; then CMD='sudo -n kubectl'; else CMD='kubectl'; fi
              fi; \
              NS='mundo-da-lua'; DEPLOY='mundo-da-lua-home'; CONTAINER='mundo-da-lua-home'; \
-             # Atualiza a imagem para a tag imutável do commit
              \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:${SHA_TAG} --record; \
-             # Aguarda o rollout concluir
              \$CMD -n \$NS rollout status deployment/\$DEPLOY --timeout=180s; \
-             # Mostra um resumo dos novos pods
              \$CMD -n \$NS get pods -l app.kubernetes.io/name=\$DEPLOY -o wide --no-headers | head -n 5 \
             "
