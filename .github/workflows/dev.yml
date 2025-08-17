@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Habilita Buildx (driver docker-container) e resolve o problema de cache
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -30,6 +31,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # Usa cache GHA (evita o erro e acelera builds)
       - name: Build & Push (tag: dev)
         uses: docker/build-push-action@v6
         with:
@@ -55,7 +57,7 @@ jobs:
             ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
           fi
 
-      - name: Deploy new image to Kubernetes
+      - name: Set image in Kubernetes (microk8s)
         env:
           HOST: ${{ secrets.SSH_HOST }}
           PORT: ${{ secrets.SSH_PORT }}
@@ -64,13 +66,14 @@ jobs:
         run: |
           ssh -i ~/.ssh/gha_deploy -o StrictHostKeyChecking=yes -p "$PORT" "$USER@$HOST" \
             "set -euo pipefail; \
-             if command -v microk8s >/dev/null 2>&1; then
-               if sudo -n true 2>/dev/null; then CMD='sudo -n microk8s kubectl'; else CMD='microk8s kubectl'; fi
-             else
-               if sudo -n true 2>/dev/null; then CMD='sudo -n kubectl'; else CMD='kubectl'; fi
-             fi; \
+             if command -v microk8s >/dev/null 2>&1; then CMD='microk8s kubectl'; else CMD='kubectl'; fi; \
              NS='mundo-da-lua'; DEPLOY='mundo-da-lua-home'; CONTAINER='mundo-da-lua-home'; \
-             \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:dev --record; \
+             # Atualiza a imagem para a tag :dev (mesma tag)
+             \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:dev --record || true; \
+             # Garante recriação dos pods para puxar a imagem nova
+             \$CMD -n \$NS rollout restart deployment/\$DEPLOY; \
+             # Aguarda o rollout concluir
              \$CMD -n \$NS rollout status deployment/\$DEPLOY --timeout=180s; \
+             # Mostra um resumo dos pods
              \$CMD -n \$NS get pods -l app.kubernetes.io/name=\$DEPLOY -o wide --no-headers | head -n 5 \
             "
