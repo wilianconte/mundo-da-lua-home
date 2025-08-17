@@ -7,19 +7,19 @@ on:
     branches: [ "dev" ]   
   workflow_dispatch:
 jobs:
-  # build-and-push:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: Log in to Docker Hub
-  #       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-  #     - name: Build Docker image (tag :dev)
-  #       run: docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/mundo-da-lua-home:dev .
+      - name: Build Docker image (tag :dev)
+        run: docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/mundo-da-lua-home:dev .
 
-  #     - name: Push image to Docker Hub
-  #       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mundo-da-lua-home:dev
+      - name: Push image to Docker Hub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mundo-da-lua-home:dev
 
   deploy:
   runs-on: ubuntu-latest
