@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       image: ${{ steps.meta.outputs.image }}
+      sha_tag: ${{ steps.meta.outputs.sha_tag }}
     steps:
       - uses: actions/checkout@v4
 
@@ -32,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Usa cache GHA (evita o erro e acelera builds)
-      - name: Build & Push (tag: dev)
+      - name: Build & Push (dev + dev-$GITHUB_SHA)
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -68,12 +69,7 @@ jobs:
             "set -euo pipefail; \
              if command -v microk8s >/dev/null 2>&1; then CMD='microk8s kubectl'; else CMD='kubectl'; fi; \
              NS='mundo-da-lua'; DEPLOY='mundo-da-lua-home'; CONTAINER='mundo-da-lua-home'; \
-             # Atualiza a imagem para a tag :dev (mesma tag)
-             \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:dev --record || true; \
-             # Garante recriação dos pods para puxar a imagem nova
-             \$CMD -n \$NS rollout restart deployment/\$DEPLOY; \
-             # Aguarda o rollout concluir
-             \$CMD -n \$NS rollout status deployment/\$DEPLOY --timeout=180s; \
-             # Mostra um resumo dos pods
-             \$CMD -n \$NS get pods -l app.kubernetes.io/name=\$DEPLOY -o wide --no-headers | head -n 5 \
+             \$CMD -n \$NS set image deployment/\$DEPLOY \$CONTAINER=${IMAGE}:dev --record; \
+             \$CMD -n \$NS rollout status deployment/\$DEPLOY --timeout=120s; \
+             \$CMD -n \$NS get pods -l app=\$CONTAINER -o wide --no-headers | head -n 5 \
             "
