@@ -20,9 +20,17 @@ export default function Footer() {
           <div>
             <p className="fs-sm fw-400 fc-white">Visite nossas redes sociais:</p>
           </div>
-          <a href="#"><span className="icon-whatsapp"></span></a>
-          <a href="#"><span className="icon-instagran"></span></a>
-          <a href="#"><span className="icon-facebook"></span></a>
+          <a 
+            href="https://wa.me/+554133393991?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Mundo%20da%20Lua."
+            target="_blank"
+            rel="noopener noreferrer"><span className="icon-whatsapp"></span></a>
+          <a 
+            href="https://www.instagram.com/espacomundodalua"
+            target="_blank"
+            rel="noopener noreferrer"><span className="icon-instagran"></span></a>
+          <a href="https://www.facebook.com/espacomundodalua"
+            target="_blank"
+            rel="noopener noreferrer"><span className="icon-facebook"></span></a>
         </div>
       </div>
     </footer>

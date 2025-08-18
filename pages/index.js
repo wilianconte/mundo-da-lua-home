@@ -20,7 +20,15 @@ export default function Home() {
                 <li><a href="#">Equipe</a></li>
                 <li><a href="#">Faça Parte</a></li>
                 <li><a href="#">Blog</a></li>
-                <ul><a className="btn-primary" href="#">Contato</a></ul>
+                <ul>
+                  <a
+                    className="btn-primary"
+                    href="https://wa.me/+554133393991?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Mundo%20da%20Lua."
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Contato
+                  </a>
+                </ul>
               </ul>
             </nav>
           </div>
